@@ -153,6 +153,18 @@ section.disciplinas-grid {
   color: #555;
 }
 
+.disciplina-card p + p {
+  margin-top: 6px;
+}
+
+.badge {
+  background-color: #007bff;
+  color: white;
+  padding: 0.2em 0.6em;
+  border-radius: 0.2em;
+  font-size: 0.9em;
+}
+
 .pagination {
   display: flex;
   justify-content: space-between;
