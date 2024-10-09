@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+  </head>
+<body>
+    <!-- Tela de Login -->
+    <div class="login-container" id="login-container">
+        <h2 class="bold-text">Portal Acadêmico</h2>
+        <div class="form-group">
+            <label for="matricula" class="bold-text">Matrícula</label>
+            <input type="text" id="matricula" required>
+        </div>
+        <div class="form-group">
+            <label for="senha" class="bold-text">Senha</label>
+            <input type="password" id="senha" required>
+        </div>
+        <div class="form-group">
+            <label for="vinculo" class="bold-text">Universidade</label>
+            <select id="vinculo">
+                <option value="UFCG">UFCG</option>
+            </select>
+        </div>
+        <button onclick="login()" class="bold-text">Login</button>
+        <div id="message"></div>
+    </div>
+
+    <!-- Tela Inicial -->
+    <div class="main-container" id="main-container" style="display: none;">
+      <br />  
+      <br />  
+      <br />  
+      <header>
+            <h1 class="bold-text">Portal Acadêmico</h1>
+            <br />
+            <div class="user-info">
+              <div>
+                <p id="nome"></p>
+                <p id="matricula-info"></p>
+              </div>
+              <div>
+                <p id="curso"></p>
+                <p id="universidade"></p>
+              </div>
+            </div>
+        </header>
+        <br />
+        <!-- Campo de busca -->
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Buscar por disciplina ou professor..." oninput="filterDisciplinas()">
+        </div>
+
+        <section class="disciplinas-grid" id="disciplinas-grid">
+            <!-- Disciplinas serão inseridas aqui dinamicamente -->
+        </section>
+
+        <!-- Controles de paginação -->
+        <div class="pagination">
+          <button id="prev-page" onclick="prevPage(groupedBySemestre)">Anterior</button>
+          <span id="page-info">Página 1</span>
+          <button id="next-page" onclick="nextPage(groupedBySemestre)">Próxima</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
